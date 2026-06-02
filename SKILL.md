@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v1.5 — 2026-06-01
+**Versão:** v1.6 — 2026-06-02
 **Repositório:** https://github.com/victorarimatea/skill-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -83,6 +83,7 @@ Uma operação pode combinar mais de um tipo.
 | OP-E | Correção pontual | Correção de erro, typo ou inconsistência sem alteração de conteúdo |
 | OP-F | Atualização de planejamento | Alteração em ROADMAP, CONTEXTO.md ou documentação de visão |
 | OP-P | Atualização de projeto | Qualquer alteração em repositório do tipo P |
+| OP-W | Atualização de workflow | Qualquer alteração em repositório do tipo W, incluindo criação de log de execução |
 
 Apresente a classificação ao usuário antes de prosseguir:
 "Esta operação é classificada como [OP-X + OP-Y]. Vou planejar
@@ -209,6 +210,8 @@ operação específica exigir.
 **No repositório do projeto:**
 - [ ] Arquivo alterado com conteúdo atualizado
 - [ ] `INDICE.md` — atualizado se novo arquivo ou pasta foi criado
+- [ ] `EXECUCOES.md` — linha adicionada se um workflow foi acionado no contexto
+  deste projeto (referência ao log no repositório W — não duplicar conteúdo)
 - [ ] `backlog-versoes.md` — nova entrada registrando a decisão/alteração
 - [ ] `stakeholders.md` — atualizado se houve mudança de participantes
 - [ ] `README.md` — status e deliberações pendentes atualizados se necessário
@@ -450,6 +453,31 @@ Próxima ação sugerida: [o que o mantenedor deve fazer agora]
 
 Token pode ser revogado: https://github.com/settings/tokens
 ```
+
+### OP-W — Atualização de workflow
+
+**No repositório do workflow:**
+- [ ] `WORKFLOW.md` — atualizado se o processo foi alterado (versão incrementada)
+- [ ] `INDICE.md` — atualizado se novo arquivo ou pasta foi criado
+- [ ] `backlog-versoes.md` — nova entrada com status do workflow, execuções afetadas,
+  skills afetadas
+
+**Log de execução (quando em sessão autenticada com token):**
+- [ ] `execucoes/AAAA-MM-DD-[contexto].md` — criado com conteúdo obrigatório:
+  data/hora, executor, projeto associado (com link), resumo de etapas,
+  decisões tomadas, desvios, artefatos gerados (com links), status, lições
+
+**No projeto associado (tipo P), se houver:**
+- [ ] `EXECUCOES.md` — linha adicionada referenciando o log no repositório W
+  (não duplicar conteúdo — apenas referenciar)
+
+**No ecossistema-sumario (M01):**
+- [ ] `sumario.md` — versão do workflow atualizada se mudou
+- [ ] `backlog-versoes.md` — nova entrada se o status mudou
+
+**No dtd-setis:**
+- [ ] `CHANGELOG.md` — entrada se a mudança for relevante para o histórico público
+
 
 ---
 
