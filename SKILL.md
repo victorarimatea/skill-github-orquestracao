@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v1.3 — 2026-06-01
+**Versão:** v1.4 — 2026-06-01
 **Repositório:** https://github.com/victorarimatea/skill-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -123,6 +123,7 @@ operação específica exigir.
 
 **No repositório da skill:**
 - [ ] `SKILL.md` — versão incrementada no cabeçalho
+- [ ] `INDICE.md` — atualizado se a operação criou ou removeu arquivo
 - [ ] `backlog-versoes.md` — nova entrada com impacto (breaking/non-breaking)
   e skills afetadas
 
@@ -142,6 +143,7 @@ operação específica exigir.
 
 **No repositório da matriz:**
 - [ ] Arquivo alterado com versão incrementada no cabeçalho
+- [ ] `INDICE.md` — atualizado se a operação criou ou removeu arquivo na matriz
 - [ ] `backlog-versoes.md` — nova entrada com tópico afetado, fonte, proposto por
 
 **No ecossistema-sumario (M01) — se a matriz alterada NÃO for o próprio M01:**
@@ -159,6 +161,7 @@ operação específica exigir.
 
 **No repositório do projeto associado (tipo P), se existir:**
 - [ ] `documentos/` — artefato adicionado
+- [ ] `INDICE.md` — atualizado para refletir o novo artefato em `documentos/`
 - [ ] `backlog-versoes.md` — nova entrada registrando a geração
 
 **No dtd-setis:**
@@ -183,11 +186,16 @@ operação específica exigir.
 - **Não incrementar:** typo em texto descritivo, ajuste de formatação menor,
   correção ortográfica sem impacto no significado
 
+- [ ] `INDICE.md` — atualizado apenas se a correção envolveu criação ou remoção
+  de arquivo (raro em OP-E, mas obrigatório quando ocorrer)
+
 ### OP-F — Atualização de planejamento
 
 **No arquivo atualizado:**
 - [ ] Conteúdo atualizado
 - [ ] Data de atualização ajustada no cabeçalho
+- [ ] `INDICE.md` — atualizado se a operação criou novo arquivo referenciado
+  no ROADMAP, CONTEXTO.md ou outro documento de planejamento
 
 **No ecossistema-sumario (M01) — se o arquivo for CONTEXTO.md:**
 - [ ] `backlog-versoes.md` — nova entrada
@@ -438,6 +446,19 @@ de variáveis bash. O JSON resultante continha caracteres de controle inválidos
 **Correção incorporada:** Toda chamada à API GitHub usa obrigatoriamente
 Python urllib com `json.dumps()` para serialização — nunca curl com heredoc.
 Ver padrão de código na Etapa 5 deste SKILL.md.
+
+### Erro #006 — 2026-06-01
+**Problema:** Auditoria de cobertura de changelog no OP-P retornou falso
+negativo (⚠️) indicando ausência de instrução de changelog. A leitura
+manual confirmou que a instrução existe e está correta. O erro é reincidência
+do padrão do Erro #005: o script de auditoria buscava 'CHANGELOG.md' em
+trecho limitado da seção, não no conteúdo completo capturado por regex.
+**Causa:** Uso de busca por substring em variável de texto parcial em vez
+de aplicar regex com re.DOTALL na seção completa.
+**Correção incorporada:** Toda auditoria de cobertura de checklists da S04
+deve usar `re.findall(r'### OP-X.*?(?=### OP-|## )', skill, re.DOTALL)`
+para capturar a seção completa antes de verificar presença de termos.
+Nunca buscar em trecho — sempre na seção inteira.
 
 ### Erro #005 — 2026-06-01
 **Problema:** Script de auditoria da Etapa 6 buscava "backlog" e "changelog"
