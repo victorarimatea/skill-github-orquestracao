@@ -1,3 +1,19 @@
+## v1.7 — 2026-06-02
+
+**Tipo de alteração:** Atualização
+**Autorizado por:** victorarimatea
+**Impacto:** non-breaking
+**Exposição de motivos:** Implementação do tipo A no ecossistema. A S04 passa
+a cobrir operações em repositórios de agenda com o novo tipo OP-AG, incluindo
+a lógica específica de indexação cronológica por data_reuniao — distinta da
+indexação por criação usada em todos os outros tipos.
+
+### Alterações realizadas
+- `SKILL.md` → v1.7: OP-AG com checklist completa (indexação cronológica,
+  data_reuniao vs data_registro, posição no INDICE.md); tabela de tipos atualizada
+
+---
+
 ## v1.6 — 2026-06-02
 
 **Tipo de alteração:** Atualização
