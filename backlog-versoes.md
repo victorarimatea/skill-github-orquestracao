@@ -1,3 +1,24 @@
+## v1.2 — 2026-06-01
+
+**Tipo de alteração:** Atualização
+**Autorizado por:** victorarimatea
+**Impacto:** non-breaking
+**Skills afetadas:** nenhuma
+**Exposição de motivos:** Incorporação do Erro #004, identificado durante
+diagnóstico de maturidade do ecossistema. O script de auditoria da Etapa 6
+usava padrão de busca restrito ('## v') que não cobria repositórios com
+entradas em subseção ('### v'), como o M02. O falso positivo gerou diagnóstico
+incorreto que só foi descartado após leitura manual. Segundo ciclo completo
+de aprendizado contínuo da skill nesta mesma sessão de criação.
+
+### Alterações realizadas
+- `SKILL.md` → v1.2:
+  - Etapa 6, Verificação 1: instrução para aceitar '## v' e '### v'
+    como padrões válidos de entrada em backlog-versoes.md
+  - Seção Erros: Erro #004 registrado com causa e correção incorporada
+
+---
+
 ## v1.1 — 2026-06-01
 
 **Tipo de alteração:** Atualização
