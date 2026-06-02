@@ -1,3 +1,25 @@
+## v1.5 — 2026-06-01
+
+**Tipo de alteração:** Atualização
+**Autorizado por:** victorarimatea
+**Impacto:** non-breaking
+**Skills afetadas:** nenhuma
+**Exposição de motivos:** Adição da Verificação 4 (auditoria de glossário)
+na Etapa 6 da S04. Fecha o ciclo de manutenção do GLOSSARIO.md: toda
+operação que introduza termos novos no ecossistema agora tem etapa
+obrigatória de verificação e proposta de atualização antes do encerramento.
+O glossário deixa de ser um documento estático e passa a crescer
+naturalmente com o ecossistema. Campo "Glossário verificado" adicionado
+ao relatório padrão da Etapa 7.
+
+### Alterações realizadas
+- `SKILL.md` → v1.5:
+  - Etapa 6: Verificação 4 adicionada com critérios, procedimento e
+    condição de omissão (apenas OP-E sem conteúdo novo)
+  - Etapa 7: campo "Glossário verificado" no relatório padrão
+
+---
+
 ## v1.4 — 2026-06-01
 
 **Tipo de alteração:** Atualização
