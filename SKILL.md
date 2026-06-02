@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v1.6 — 2026-06-02
+**Versão:** v1.7 — 2026-06-02
 **Repositório:** https://github.com/victorarimatea/skill-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -84,6 +84,7 @@ Uma operação pode combinar mais de um tipo.
 | OP-F | Atualização de planejamento | Alteração em ROADMAP, CONTEXTO.md ou documentação de visão |
 | OP-P | Atualização de projeto | Qualquer alteração em repositório do tipo P |
 | OP-W | Atualização de workflow | Qualquer alteração em repositório do tipo W, incluindo criação de log de execução |
+| OP-AG | Atualização de agenda | Depósito de registro de reunião em repositório do tipo A; atualização do INDICE.md cronológico |
 
 Apresente a classificação ao usuário antes de prosseguir:
 "Esta operação é classificada como [OP-X + OP-Y]. Vou planejar
@@ -102,6 +103,9 @@ operação específica exigir.
 
 **No repositório criado:**
 - [ ] `README.md` com ficha técnica (tipo, versão, mantenedor, status)
+- [ ] `INDICE.md` com tabela de todos os arquivos criados — **para tipo A:** índice
+  cronológico por `data_reuniao` com estrutura de pastas `reunioes/AAAA/MM/`
+  (ver Seção 4-C da nomenclatura.md e checklist OP-AG)
 - [ ] `INDICE.md` com tabela de todos os arquivos criados (obrigatório em
   todos os repositórios, sem exceção — ver Seção 10 da nomenclatura.md)
 - [ ] `backlog-versoes.md` com entrada v1.0 e exposição de motivos
@@ -477,6 +481,26 @@ Token pode ser revogado: https://github.com/settings/tokens
 
 **No dtd-setis:**
 - [ ] `CHANGELOG.md` — entrada se a mudança for relevante para o histórico público
+
+
+### OP-AG — Atualização de agenda
+
+**No repositório da agenda:**
+- [ ] Arquivo `AAAA-MM-DD-[CLASSIFICACAO]-[descricao].md` criado na pasta
+  `reunioes/AAAA/MM/` correta (baseada em `data_reuniao`, não `data_registro`)
+- [ ] Front Matter YAML com `data_reuniao` e `data_registro` preenchidos
+- [ ] `INDICE.md` — nova linha adicionada na posição cronológica correta
+  (ordenado por `data_reuniao`, não por data de inserção)
+- [ ] `backlog-versoes.md` — entrada apenas se o repositório A foi alterado
+  estruturalmente (nova pasta criada, INDICE.md reestruturado)
+
+**No projeto associado (tipo P), se houver:**
+- [ ] `EXECUCOES.md` — linha adicionada referenciando o arquivo no repositório A
+
+**Atenção: indexação cronológica**
+O INDICE.md do tipo A é ordenado por `data_reuniao`. Ao inserir um registro
+retroativo (reunião antiga), adicionar na posição correta da linha do tempo —
+não necessariamente ao final do arquivo.
 
 
 ---
