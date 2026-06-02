@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v1.4 — 2026-06-01
+**Versão:** v1.5 — 2026-06-01
 **Repositório:** https://github.com/victorarimatea/skill-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -390,6 +390,37 @@ confirmar que os caminhos estão corretos.
 Se qualquer verificação falhar: corrigir imediatamente, ainda com
 o token ativo, antes de informar conclusão ao usuário.
 
+**Verificação 4 — Glossário:**
+Varrer todos os arquivos criados ou alterados na operação em busca de
+termos técnicos novos que possam não estar definidos no `GLOSSARIO.md`
+do repositório âncora (ecossistema-sumario).
+
+**O que constitui um termo candidato ao glossário:**
+- Substantivos técnicos específicos do ecossistema (ex: "drift documental",
+  "repositório âncora", "porta de entrada")
+- Siglas introduzidas ou usadas com novo significado (ex: OP-A, IAC, PoC)
+- Conceitos operacionais novos que não existiam antes da operação
+- Adjetivos técnicos com significado específico no contexto (ex: "breaking",
+  "non-breaking", "retroalimentado")
+
+**Procedimento:**
+1. Listar os termos candidatos identificados nos arquivos alterados
+2. Comparar com o conteúdo atual do `GLOSSARIO.md`
+3. Para cada termo ausente: propor definição e solicitar aprovação do
+   mantenedor antes de atualizar o glossário
+4. A atualização do `GLOSSARIO.md` é classificada como OP-C e deve
+   seguir o rito completo da S04 — backlog, sumario, INDICE, changelog
+
+**Quando esta verificação pode ser omitida:**
+Apenas em OP-E (correção pontual de typo ou formatação) onde nenhum
+conteúdo novo foi introduzido. Em todos os demais tipos, é obrigatória.
+
+**Resultado esperado no relatório (Etapa 7):**
+- "Glossário verificado: nenhum termo novo identificado" — ou —
+- "Glossário verificado: [N] termos propostos → [status]"
+
+
+
 ---
 
 ## ETAPA 7 — Relatório de encerramento
@@ -411,6 +442,7 @@ Verificações realizadas:
   Versões consistentes: ✅
   README dtd-setis atualizado: ✅
   Links verificados: ✅
+  Glossário verificado: [nenhum termo novo | N termos adicionados]
 
 Itens pendentes: [lista ou "nenhum"]
 
