@@ -21,6 +21,21 @@ estrutural completa adicionada nesta versão.
 
 ---
 
+## v1.9 — 2026-06-03
+
+**Tipo de alteração:** Correção / Melhoria
+**Autorizado por:** victorarimatea
+**Exposição de motivos:** Sessão de 2026-06-03 identificou que a checklist OP-P não especificava explicitamente a verificação do README.md de repositórios de projeto quando novos documentos são adicionados — apenas mencionava "status e deliberações pendentes". O drift foi identificado durante operação de publicação do RESUMO-EXECUTIVO-v2.0 no P02. Corrigido como Erro #008 e aprendizado permanente.
+**Impacto:** non-breaking
+**Skills afetadas:** —
+
+### Alterações realizadas
+- `SKILL.md` v1.8 → v1.9: checklist OP-P expandida (item README.md agora especifica versão + estrutura de arquivos + link de navegação rápida); Erro #008 adicionado ao registro de erros aprendidos
+
+---
+
+
+
 ## v1.7 — 2026-06-02
 
 **Tipo de alteração:** Atualização
