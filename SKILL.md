@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v1.9 — 2026-06-03
+**Versão:** v2.0 — 2026-06-03
 **Repositório:** https://github.com/victorarimatea/skill-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -229,6 +229,44 @@ operação específica exigir.
 **No dtd-setis:**
 - [ ] `projetos/monitoramento.md` — atualizado se a mudança for relevante
   para visibilidade externa (somente mediante autorização explícita)
+
+---
+
+#### OP-P especial — ecossistema-dtd-setis (P02)
+
+O P02 é o único repositório do ecossistema que documenta o próprio ecossistema.
+Toda modificação no P02 pode afetar arquivos externos que o referenciam.
+Usar esta checklist **em substituição** à OP-P genérica quando o repositório
+sendo alterado for `ecossistema-dtd-setis`.
+
+**Condição de ativação por tipo de modificação:**
+
+| Tipo de modificação no P02 | sumario.md | CONTEXTO.md | backlog M01 | backlog-acoes | README dtd-setis | CHANGELOG | ROADMAP | monitoramento | arquitetura |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Novo documento interno | versão | versão | ✓ | — | — | — | — | — | — |
+| Status muda | versão+status | versão | ✓ | ✓ | — | ✓ | ✓ | ✓ | — |
+| Produto formal entregue externamente | versão | ✓ | ✓ | ✓ | — | ✓ | — | — | — |
+| Descrição pública muda | — | — | — | — | ✓ | — | — | ✓ | — |
+| Mudança na arquitetura do tipo P | — | — | — | — | — | — | — | — | ✓ |
+| Marco concluído (próximos passos) | — | ✓ | ✓ | — | — | — | ✓ | — | — |
+
+**Arquivos externos — o que cada um registra sobre o P02:**
+
+*No ecossistema-sumario (M01):*
+- [ ] `sumario.md` — versão e status do P02 (fonte de verdade de versão)
+- [ ] `CONTEXTO.md` — versão do P02 na tabela; próximos passos relacionados
+- [ ] `backlog-versoes.md` — entrada quando status mudou ou CONTEXTO.md foi atualizado
+- [ ] `backlog-acoes-dtd.md` — entrada quando produto formal for entregue externamente
+
+*No dtd-setis (portfólio público):*
+- [ ] `README.md` — tabela de repositórios (atualizar se descrição mudar)
+- [ ] `CHANGELOG.md` — entregas externas relevantes (IAC distribuído, PoC aprovada, marco de fase)
+- [ ] `ROADMAP.md` — estado geral do ecossistema (atualizar se fase concluída)
+- [ ] `projetos/monitoramento.md` — descrição pública curada (atualizar se escopo ou status público mudar)
+- [ ] `docs/arquitetura.md` — apenas se a arquitetura do tipo P mudar
+
+**Regra de ouro:** versão no `sumario.md` é sempre a fonte de verdade.
+O `CONTEXTO.md` deriva do `sumario.md` — nunca podem divergir.
 
 ---
 
