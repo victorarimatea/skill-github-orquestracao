@@ -21,6 +21,21 @@ estrutural completa adicionada nesta versão.
 
 ---
 
+## v2.0 — 2026-06-03
+
+**Tipo de alteração:** Adição estrutural (MAJOR)
+**Autorizado por:** victorarimatea
+**Exposição de motivos:** O P02 (ecossistema-dtd-setis) é o único repositório do ecossistema que documenta o próprio ecossistema — criando um grafo de dependências reflexivo que a checklist OP-P genérica não cobria adequadamente. Sessão de 2026-06-03 mapeou sistematicamente os 8 arquivos externos (em M01 e dtd-setis) que referenciam o P02, identificou as condições de ativação de cada um e formalizou esse conhecimento como checklist OP-P especial. Mudança classificada como MAJOR porque introduz uma variante de operação incompatível com a lógica anterior de OP-P genérica.
+**Impacto:** breaking — operações OP-P sobre o P02 agora seguem checklist própria
+**Skills afetadas:** —
+
+### Alterações realizadas
+- `SKILL.md` v1.9 → v2.0: checklist `OP-P especial — ecossistema-dtd-setis (P02)` adicionada após OP-P genérica, com matriz de 8 arquivos externos e condições de ativação por tipo de modificação
+
+---
+
+
+
 ## v1.9 — 2026-06-03
 
 **Tipo de alteração:** Correção / Melhoria
