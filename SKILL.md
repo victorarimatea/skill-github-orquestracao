@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v2.0 — 2026-06-03
+**Versão:** v2.1 — 2026-06-03
 **Repositório:** https://github.com/victorarimatea/skill-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -425,10 +425,18 @@ Ao auditar presença de `INDICE.md` nos repositórios, verificar tanto
 na raiz quanto via `git/trees` recursivo — o arquivo pode estar presente
 mas não aparecer em listagens superficiais.
 
-**Verificação 2 — README do dtd-setis:**
-Confirmar que o diagrama ASCII e a tabela de repositórios refletem
-o estado atual. Este arquivo foi o problema identificado em
-2026-06-01 — verificação obrigatória a cada operação.
+**Verificação 2 — README do dtd-setis (comparação obrigatória contra sumario.md):**
+Reler o `sumario.md` carregado na Etapa 0. Para cada repositório listado
+como ativo no `sumario.md`, verificar se ele aparece no diagrama ASCII
+e na tabela do `README.md` do `dtd-setis`. Qualquer repositório presente
+no `sumario.md` e ausente do `README.md` configura drift obrigatório a
+corrigir antes de encerrar a operação — independentemente de ter sido
+criado nesta sessão ou em sessão anterior.
+
+Fonte de verdade: `sumario.md` (já lido na Etapa 0 — não reler).
+Este arquivo foi o problema identificado em 2026-06-01 (auto-referencial)
+e novamente em 2026-06-03 (drift acumulado de sessões anteriores) —
+verificação obrigatória a cada operação, sempre contra o sumario.md.
 
 **Verificação 3 — Links:**
 Se novos arquivos foram criados e referenciados em outros documentos,
@@ -589,6 +597,23 @@ não necessariamente ao final do arquivo.
 
 Esta seção é atualizada a cada problema encontrado em operações reais.
 Cada erro vira uma verificação adicional no fluxo desta skill.
+
+### Erro #009 — 2026-06-03
+**Problema:** O `README.md` do `dtd-setis` estava com diagrama ASCII e tabela
+de repositórios listando apenas 4 repositórios, enquanto o `sumario.md` registrava
+15 repositórios ativos. O drift acumulou silenciosamente ao longo das Fases 2, 3
+e 4 do ecossistema (2026-06-01 a 2026-06-02), sem ser detectado pela S04.
+**Causa raiz:** A Verificação 2 da Etapa 6 instruía o Claude a confirmar que o
+README "reflete o estado atual" — mas sem especificar a fonte de verdade para
+essa comparação. O Claude comparava o README com o que a sessão *atual* havia
+criado, não com o `sumario.md`. Drift de sessões anteriores era invisível.
+**Solução:** Verificação 2 reescrita para exigir comparação explícita do README
+contra o `sumario.md` (já lido na Etapa 0), cobrindo tanto a sessão atual quanto
+drift acumulado de sessões anteriores. Qualquer ausência é corrigida antes do
+encerramento, independentemente de quando o drift foi criado.
+**Aprendizado geral:** Verificações de consistência precisam de fonte de verdade
+explícita. "Reflete o estado atual" é ambíguo — "bate com o sumario.md" é operacional.
+**Status:** Corrigido na v2.1
 
 ### Erro #001 — 2026-06-01
 **Problema:** README.md do dtd-setis não foi atualizado ao criar o tipo P
