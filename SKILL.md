@@ -1,7 +1,7 @@
 # skill-github-orquestracao
 
 **Versão:** v2.1 — 2026-06-03
-**Repositório:** https://github.com/victorarimatea/skill-github-orquestracao
+**Repositório:** https://github.com/victorarimatea/skl-github-orquestracao
 **Mantenedor:** victorarimatea
 
 Esta skill garante a consistência do ecossistema DTD/SETIS a cada operação
@@ -53,9 +53,9 @@ Nunca pule esta etapa. O objetivo é conhecer o estado **real e atual**
 do ecossistema, não o que foi discutido na sessão.
 
 ```
-GET https://raw.githubusercontent.com/victorarimatea/ecossistema-sumario/main/sumario.md
-GET https://raw.githubusercontent.com/victorarimatea/ecossistema-sumario/main/nomenclatura.md
-GET https://raw.githubusercontent.com/victorarimatea/ecossistema-sumario/main/CONTEXTO.md
+GET https://raw.githubusercontent.com/victorarimatea/hub-fonte/main/sumario.md
+GET https://raw.githubusercontent.com/victorarimatea/hub-fonte/main/nomenclatura.md
+GET https://raw.githubusercontent.com/victorarimatea/hub-fonte/main/CONTEXTO.md
 ```
 
 A partir da leitura, extraia e registre internamente:
@@ -114,12 +114,12 @@ operação específica exigir.
 - [ ] Pasta `reunioes/` com `.gitkeep` (apenas tipo P)
 - [ ] Pasta `documentos/` com `.gitkeep` (apenas tipo P)
 
-**No ecossistema-sumario (M01):**
+**No hub-fonte (M01):**
 - [ ] `sumario.md` — nova entrada na seção correta com ID, nome, versão, status, descrição
 - [ ] `CONTEXTO.md` — tabela de repositórios ativos atualizada
 - [ ] `backlog-versoes.md` — nova entrada (tipo: Adição)
 
-**No dtd-setis (portfólio):**
+**No hub-entrada (portfólio):**
 - [ ] `README.md` — diagrama ASCII + tabela de repositórios atualizados
 - [ ] `CHANGELOG.md` — nova entrada na versão atual
 - [ ] `ROADMAP.md` — item marcado como ✅ se estava planejado
@@ -132,7 +132,7 @@ operação específica exigir.
 - [ ] `backlog-versoes.md` — nova entrada com impacto (breaking/non-breaking)
   e skills afetadas
 
-**No ecossistema-sumario (M01):**
+**No hub-fonte (M01):**
 - [ ] `sumario.md` — versão da skill atualizada
 - [ ] `CONTEXTO.md` — tabela de repositórios atualizada
 - [ ] `backlog-versoes.md` — nova entrada (tipo: Atualização)
@@ -153,7 +153,7 @@ operação específica exigir.
 - [ ] `CONTEXTO.md` — versão do repositório alterado atualizada na tabela de
   repositórios ativos (a versão no CONTEXTO deve bater com o sumario.md)
 
-**No ecossistema-sumario (M01) — se a matriz alterada NÃO for o próprio M01:**
+**No hub-fonte (M01) — se a matriz alterada NÃO for o próprio M01:**
 - [ ] `sumario.md` — versão da matriz atualizada
 - [ ] `backlog-versoes.md` — nova entrada
 
@@ -162,7 +162,7 @@ operação específica exigir.
 
 ### OP-D — Geração de documento institucional
 
-**No ecossistema-sumario (M01):**
+**No hub-fonte (M01):**
 - [ ] `CONTEXTO.md` — seção de documentos gerados atualizada com status
 - [ ] `backlog-versoes.md` — nova entrada (tipo: Adição)
 
@@ -184,7 +184,7 @@ operação específica exigir.
 
 **No repositório onde ocorreu:**
 - [ ] `backlog-versoes.md` — entrada obrigatória se a versão foi incrementada
-- [ ] `CHANGELOG.md` do `dtd-setis` — entrada se a correção for relevante
+- [ ] `CHANGELOG.md` do `hub-entrada` — entrada se a correção for relevante
   para o histórico público (omitir para typos menores sem impacto funcional)
 
 **Critério objetivo de incremento de versão em OP-E:**
@@ -204,7 +204,7 @@ operação específica exigir.
 - [ ] `INDICE.md` — atualizado se a operação criou novo arquivo referenciado
   no ROADMAP, CONTEXTO.md ou outro documento de planejamento
 
-**No ecossistema-sumario (M01) — se o arquivo for CONTEXTO.md:**
+**No hub-fonte (M01) — se o arquivo for CONTEXTO.md:**
 - [ ] `backlog-versoes.md` — nova entrada
 - [ ] Versão do CONTEXTO.md incrementada
 
@@ -222,7 +222,7 @@ operação específica exigir.
 - [ ] `stakeholders.md` — atualizado se houve mudança de participantes
 - [ ] `README.md` — versão atualizada no cabeçalho; estrutura de arquivos e link de navegação rápida atualizados se novo documento foi adicionado
 
-**No ecossistema-sumario (M01):**
+**No hub-fonte (M01):**
 - [ ] `sumario.md` — status do projeto atualizado se mudou
 - [ ] `backlog-versoes.md` — nova entrada apenas se o status mudou
 
@@ -232,16 +232,16 @@ operação específica exigir.
 
 ---
 
-#### OP-P especial — ecossistema-dtd-setis (P02)
+#### OP-P especial — hub-memoria (P02)
 
 O P02 é o único repositório do ecossistema que documenta o próprio ecossistema.
 Toda modificação no P02 pode afetar arquivos externos que o referenciam.
 Usar esta checklist **em substituição** à OP-P genérica quando o repositório
-sendo alterado for `ecossistema-dtd-setis`.
+sendo alterado for `hub-memoria`.
 
 **Condição de ativação por tipo de modificação:**
 
-| Tipo de modificação no P02 | sumario.md | CONTEXTO.md | backlog M01 | backlog-acoes | README dtd-setis | CHANGELOG | ROADMAP | monitoramento | arquitetura |
+| Tipo de modificação no P02 | sumario.md | CONTEXTO.md | backlog M01 | backlog-acoes | README hub-entrada | CHANGELOG | ROADMAP | monitoramento | arquitetura |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Novo documento interno | versão | versão | ✓ | — | — | — | — | — | — |
 | Status muda | versão+status | versão | ✓ | ✓ | — | ✓ | ✓ | ✓ | — |
@@ -252,13 +252,13 @@ sendo alterado for `ecossistema-dtd-setis`.
 
 **Arquivos externos — o que cada um registra sobre o P02:**
 
-*No ecossistema-sumario (M01):*
+*No hub-fonte (M01):*
 - [ ] `sumario.md` — versão e status do P02 (fonte de verdade de versão)
 - [ ] `CONTEXTO.md` — versão do P02 na tabela; próximos passos relacionados
 - [ ] `backlog-versoes.md` — entrada quando status mudou ou CONTEXTO.md foi atualizado
 - [ ] `backlog-acoes-dtd.md` — entrada quando produto formal for entregue externamente
 
-*No dtd-setis (portfólio público):*
+*No hub-entrada (portfólio público):*
 - [ ] `README.md` — tabela de repositórios (atualizar se descrição mudar)
 - [ ] `CHANGELOG.md` — entregas externas relevantes (IAC distribuído, PoC aprovada, marco de fase)
 - [ ] `ROADMAP.md` — estado geral do ecossistema (atualizar se fase concluída)
@@ -282,12 +282,12 @@ Operação: [descrição em uma linha]
 
 | # | Arquivo | Repositório | Ação | Conteúdo da alteração |
 |---|---|---|---|---|
-| 1 | sumario.md | ecossistema-sumario | ATUALIZAR v0.X → v0.Y | Adicionar entrada P01 na seção Projetos |
-| 2 | CONTEXTO.md | ecossistema-sumario | ATUALIZAR v1.X → v1.Y | Tabela de repositórios: adicionar P01 |
-| 3 | backlog-versoes.md | ecossistema-sumario | ADICIONAR entrada | v0.Y — Adição — criação do P01 |
-| 4 | README.md | dtd-setis | ATUALIZAR | Diagrama e tabela: adicionar P01 |
-| 5 | CHANGELOG.md | dtd-setis | ADICIONAR entrada | [1.X] — P01 criado |
-| 6 | README.md | telessaude-poc-prisional | CRIAR | Ficha técnica do projeto |
+| 1 | sumario.md | hub-fonte | ATUALIZAR v0.X → v0.Y | Adicionar entrada P01 na seção Projetos |
+| 2 | CONTEXTO.md | hub-fonte | ATUALIZAR v1.X → v1.Y | Tabela de repositórios: adicionar P01 |
+| 3 | backlog-versoes.md | hub-fonte | ADICIONAR entrada | v0.Y — Adição — criação do P01 |
+| 4 | README.md | hub-entrada | ATUALIZAR | Diagrama e tabela: adicionar P01 |
+| 5 | CHANGELOG.md | hub-entrada | ADICIONAR entrada | [1.X] — P01 criado |
+| 6 | README.md | prj-telessaude-poc-prisional | CRIAR | Ficha técnica do projeto |
 ...
 
 Total: X arquivos em Y repositórios.
@@ -396,8 +396,8 @@ trata erros HTTP explicitamente e é portável entre ambientes.
 
 **Ordem recomendada de execução:**
 1. Repositórios de conteúdo (o que foi criado/alterado)
-2. ecossistema-sumario (M01) — matrizes de registro
-3. dtd-setis — portfólio público
+2. hub-fonte (M01) — matrizes de registro
+3. hub-entrada — portfólio público
 
 Esta ordem garante que se algo falhar no meio, o estado interno
 do ecossistema já está atualizado antes da vitrine pública.
@@ -425,10 +425,10 @@ Ao auditar presença de `INDICE.md` nos repositórios, verificar tanto
 na raiz quanto via `git/trees` recursivo — o arquivo pode estar presente
 mas não aparecer em listagens superficiais.
 
-**Verificação 2 — README do dtd-setis (comparação obrigatória contra sumario.md):**
+**Verificação 2 — README do hub-entrada (comparação obrigatória contra sumario.md):**
 Reler o `sumario.md` carregado na Etapa 0. Para cada repositório listado
 como ativo no `sumario.md`, verificar se ele aparece no diagrama ASCII
-e na tabela do `README.md` do `dtd-setis`. Qualquer repositório presente
+e na tabela do `README.md` do `hub-entrada`. Qualquer repositório presente
 no `sumario.md` e ausente do `README.md` configura drift obrigatório a
 corrigir antes de encerrar a operação — independentemente de ter sido
 criado nesta sessão ou em sessão anterior.
@@ -453,7 +453,7 @@ que os 5 arquivos centrais estão sincronizados entre si:
 # Checklist de consistência cruzada (executar mentalmente ou via script)
 # 1. sumario.md registra o repositório/versão correta?
 # 2. CONTEXTO.md tem a mesma versão que o sumario.md para cada ID?
-# 3. README.md do dtd-setis lista o repositório na tabela?
+# 3. README.md do hub-entrada lista o repositório na tabela?
 # 4. ROADMAP.md reflete o status real (concluído/em curso/próximo)?
 # 5. docs/arquitetura.md descreve os tipos e relações atuais?
 ```
@@ -520,7 +520,7 @@ Arquivos atualizados:
 
 Verificações realizadas:
   Versões consistentes: ✅
-  README dtd-setis atualizado: ✅
+  README hub-entrada atualizado: ✅
   Links verificados: ✅
   Glossário verificado: [nenhum termo novo | N termos adicionados]
 
@@ -548,7 +548,7 @@ Token pode ser revogado: https://github.com/settings/tokens
 - [ ] `EXECUCOES.md` — linha adicionada referenciando o log no repositório W
   (não duplicar conteúdo — apenas referenciar)
 
-**No ecossistema-sumario (M01):**
+**No hub-fonte (M01):**
 - [ ] `sumario.md` — versão do workflow atualizada se mudou
 - [ ] `backlog-versoes.md` — nova entrada se o status mudou
 
@@ -599,7 +599,7 @@ Esta seção é atualizada a cada problema encontrado em operações reais.
 Cada erro vira uma verificação adicional no fluxo desta skill.
 
 ### Erro #009 — 2026-06-03
-**Problema:** O `README.md` do `dtd-setis` estava com diagrama ASCII e tabela
+**Problema:** O `README.md` do `hub-entrada` estava com diagrama ASCII e tabela
 de repositórios listando apenas 4 repositórios, enquanto o `sumario.md` registrava
 15 repositórios ativos. O drift acumulou silenciosamente ao longo das Fases 2, 3
 e 4 do ecossistema (2026-06-01 a 2026-06-02), sem ser detectado pela S04.
@@ -616,12 +616,12 @@ explícita. "Reflete o estado atual" é ambíguo — "bate com o sumario.md" é 
 **Status:** Corrigido na v2.1
 
 ### Erro #001 — 2026-06-01
-**Problema:** README.md do dtd-setis não foi atualizado ao criar o tipo P
+**Problema:** README.md do hub-entrada não foi atualizado ao criar o tipo P
 e o repositório P01. O diagrama ASCII e a tabela de repositórios ficaram
 desatualizados por uma sessão inteira.
 **Causa:** A operação OP-A foi executada sem incluir o README do portfólio
 no mapeamento de impacto.
-**Correção incorporada:** README.md do dtd-setis está agora explícito na
+**Correção incorporada:** README.md do hub-entrada está agora explícito na
 checklist OP-A e é verificado obrigatoriamente na Etapa 6 (Verificação 2).
 
 
@@ -678,7 +678,7 @@ de auditoria corrigido na Etapa 6.
 
 ### Erro #004 — 2026-06-01
 **Problema:** Script de auditoria de backlogs usava `'## v'` como padrão
-exclusivo de busca de entradas. O repositório `saude-digital-taxonomia` (M02)
+exclusivo de busca de entradas. O repositório `mat-saude-digital-taxonomia` (M02)
 usa `'### v'` como cabeçalho de entrada — nível de subseção em vez de seção.
 Isso gerou falso positivo de "backlog vazio" no M02, que entrou no diagnóstico
 de maturidade como Item 5 ("entrada v1.0 incompleta") e só foi descartado após
