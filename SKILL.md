@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v2.2 — 2026-06-04
+**Versão:** v2.3 — 2026-06-04
 **Repositório:** https://github.com/victorarimatea/skl-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -522,6 +522,104 @@ conteúdo novo foi introduzido. Em todos os demais tipos, é obrigatória.
 
 ---
 
+## ETAPA 6-A — Mineração de ideias
+
+Esta etapa é executada **após todas as verificações da Etapa 6** e **antes
+do relatório de encerramento**. É obrigatória em toda sessão que resulte em
+plano de ação de edição de repositórios ou documentações.
+
+### Por que esta etapa existe
+
+Boas ideias surgem nas interlinhas de sessões técnicas — num comentário
+lateral, numa frase exploratória, num problema identificado ao longo do
+caminho. Esta etapa garante que nenhuma ideia embrionária se perca nos
+textos das conversas. O agente opera como minerador ativo de contexto,
+buscando candidatos, apresentando ao mantenedor e registrando na staging
+area após confirmação.
+
+### O que é uma ideia candidata
+
+Uma ideia candidata é qualquer manifestação no histórico da conversa que
+**não foi tratada como decisão formal** mas que tem potencial estratégico
+para o ecossistema. Ela pode ser embrionária, incompleta, ou expressa de
+forma casual — o que importa é o potencial, não a forma.
+
+### Critérios de elegibilidade — perguntas orientadoras
+
+Aplique as perguntas abaixo ao histórico da conversa. Um candidato é
+elegível se responder afirmativamente a **pelo menos duas**:
+
+| # | Pergunta orientadora | Sinal típico no texto |
+|---|---|---|
+| 1 | O mantenedor identificou um problema recorrente ou lacuna no ecossistema? | *"ainda não temos..."*, *"falta um..."*, *"o problema é que..."* |
+| 2 | O mantenedor expressou hipótese sobre algo que poderia existir? | *"seria interessante se..."*, *"imagino que..."*, *"poderia ser..."* |
+| 3 | O mantenedor fez comparação com referência externa? | *"como fazem em..."*, *"seria como um..."*, *"semelhante ao..."* |
+| 4 | O mantenedor formulou pergunta estratégica sem respondê-la? | *"e se..."*, *"por que não..."*, *"o que aconteceria se..."* |
+| 5 | O mantenedor expressou desejo ou intenção não convertida em ação? | *"quero pensar mais sobre..."*, *"no futuro..."*, *"seria bom ter..."* |
+| 6 | O mantenedor nomeou algo que não existe ainda mas faria sentido existir? | Substantivo novo seguido de descrição funcional |
+| 7 | O agente identificou implicação estratégica não explorada na conversa? | Conexão entre dois pontos que o mantenedor não conectou explicitamente |
+
+### Procedimento passo a passo
+
+**Passo 1 — Varredura**
+Reler o histórico completo da conversa atual. Não apenas as decisões formais
+— incluir comentários laterais, frases exploratórias, problemas identificados
+ao longo do caminho.
+
+**Passo 2 — Triagem**
+Para cada trecho candidato, aplicar as 7 perguntas orientadoras.
+Candidatos com 2 ou mais respostas afirmativas são elegíveis.
+
+**Passo 3 — Apresentação ao mantenedor**
+Para cada candidato elegível, apresentar no seguinte formato antes de
+qualquer registro:
+
+```
+💡 Ideia candidata identificada:
+"[trecho ou paráfrase do que foi dito]"
+
+Pergunta orientadora ativada: [número] — [texto da pergunta]
+Contexto: [em que momento da conversa surgiu]
+
+Gostaria de registrar isso como ideia na staging area?
+```
+
+Aguardar confirmação explícita. **Nunca registrar sem aprovação.**
+
+**Passo 4 — Elaboração**
+Após confirmação, elaborar a ideia para registro. A elaboração deve:
+- Dar nome descritivo (não apenas repetir a frase original)
+- Contextualizar o problema que resolve
+- Indicar a qual área do ecossistema se relaciona
+- Manter linguagem objetiva — sem superestimar nem subestimar o potencial
+
+**Passo 5 — Depósito na staging area**
+Registrar na **Seção C** do arquivo `hub-entrada/staging.md` com todos
+os campos preenchidos:
+
+```
+| [data] | [conversa de origem] | [ideia elaborada] | [pergunta # ativada] | ✅ confirmado | [data] |
+```
+
+**Passo 6 — Resultado no relatório**
+Incluir na Etapa 7 o campo:
+- `"Mineração de ideias: nenhum candidato identificado"` — ou —
+- `"Mineração de ideias: [N] candidatos apresentados → [N aprovados / N recusados]"`
+
+### Quando esta etapa pode ser omitida
+
+Apenas em **OP-E** (correção pontual de typo ou formatação) onde o histórico
+da conversa não contém conteúdo substantivo além da correção em si.
+Em todos os demais tipos de operação, é obrigatória.
+
+### Onde fica o arquivo de destino
+
+`hub-entrada/staging.md` — Seção C (Ideias mineradas).
+A Seção C contém instruções detalhadas sobre o ciclo de vida das ideias,
+política de limpeza e legenda de status.
+
+---
+
 ## ETAPA 7 — Relatório de encerramento
 
 Apresentar o relatório padrão:
@@ -542,6 +640,7 @@ Verificações realizadas:
   README hub-entrada atualizado: ✅
   Links verificados: ✅
   Glossário verificado: [nenhum termo novo | N termos adicionados]
+  Mineração de ideias: [nenhum candidato | N candidatos → N aprovados]
 
 Itens pendentes: [lista ou "nenhum"]
 
@@ -605,6 +704,22 @@ não necessariamente ao final do arquivo.
 ---
 
 ## REGISTRO DE ERROS APRENDIDOS
+
+### Erro #011 — 2026-06-04
+**Problema:** A S04 não tinha instrução para capturar ideias embrionárias
+que surgem nas interlinhas das sessões. Boas ideias expressas de forma casual
+ou exploratória durante conversas técnicas se perdiam sem mecanismo de resgate.
+**Causa raiz:** A S04 foi concebida como executor de operações — sem papel de
+agente de inteligência estratégica. Nenhuma etapa cobria a dimensão de inovação
+contínua das sessões de trabalho.
+**Solução:** Etapa 6-A adicionada com 7 perguntas orientadoras de elegibilidade,
+procedimento de 6 passos (varredura → triagem → apresentação → elaboração →
+depósito → relatório) e arquivo de destino staging.md/Seção C. Mineração ocorre
+antes do relatório final, ainda com contexto completo disponível.
+**Aprendizado geral:** Um agente de IA bem instruído pode operar além da execução
+— pode ser minerador ativo de contexto estratégico, desde que com critérios claros
+e controle humano na validação. Nenhuma ideia é registrada sem aprovação explícita.
+**Status:** Corrigido na v2.3
 
 ### Erro #010 — 2026-06-04
 **Problema:** O ROADMAP.md acumulava drift silencioso para entregáveis não previstos
