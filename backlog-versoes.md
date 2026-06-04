@@ -1,3 +1,21 @@
+## v2.2 — 2026-06-04
+
+**Tipo de alteração:** Atualização
+**Autorizado por:** victorarimatea
+**Impacto:** non-breaking
+**Skills afetadas:** nenhuma (verificação interna da S04)
+**Exposição de motivos:** Drift identificado: o ROADMAP acumulava itens não
+previstos que eram implementados mas nunca registrados. A S04 só cobria o
+caso "estava previsto → marcar ✅". O caso inverso não existia. Corrigido
+com a Verificação 5-A e o Erro #010.
+
+### Alterações realizadas
+- Verificação 5-A adicionada à Etapa 6: reconciliação obrigatória com ROADMAP
+  para todos os entregáveis da sessão — previstos (✅ com data) e não previstos
+  (incluir retroativamente já como ✅ com data)
+- Erro #010 registrado na seção "Registro de Erros Aprendidos"
+
+
 ## v1.8 — 2026-06-02
 
 **Tipo de alteração:** Atualização
