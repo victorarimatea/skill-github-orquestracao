@@ -1,3 +1,31 @@
+## v2.5 — 2026-06-05
+
+**Tipo de alteração:** Atualização
+**Autorizado por:** Victor Leonardo Arimatea Queiroz — Diretor de Transformação Digital
+**Impacto:** non-breaking
+**Skills afetadas:** nenhuma
+
+**Exposição de motivos:** O ecossistema não possuía nenhuma escala formal de
+severidade para classificação de erros. Todos os erros #001–#013 estavam no mesmo
+nível, impossibilitando priorização, análise de tendência e medição de saúde do
+ecossistema ao longo do tempo. Adotado o padrão SEV1–SEV4 (baseado em ITIL/ISO 20000),
+adaptado ao contexto de governança documental da DTD/SETIS. Todos os erros históricos
+classificados retroativamente. Campo **Severidade:** adicionado ao padrão obrigatório
+de registro de novos erros.
+
+### Distribuição de severidade (erros #001–#013)
+- SEV1 (Crítico): 1 erro — #003
+- SEV2 (Alto): 5 erros — #001, #002, #007, #009, #013
+- SEV3 (Médio): 6 erros — #004, #005, #006, #008, #010, #012
+- SEV4 (Baixo): 1 erro — #011
+
+### Alterações realizadas
+- `SKILL.md` v2.4 → v2.5: seção "ESCALA DE SEVERIDADE DE ERROS" adicionada
+  antes do Registro de Erros; campo **Severidade:** inserido em todos os 13 erros
+  registrados
+
+---
+
 ## v2.4.1 — 2026-06-05
 
 **Tipo de alteração:** Correção pontual (OP-E)
