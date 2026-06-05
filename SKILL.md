@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v2.5 — 2026-06-05
+**Versão:** v2.6 — 2026-06-05
 **Repositório:** https://github.com/victorarimatea/skl-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -129,6 +129,8 @@ operação específica exigir.
 
 **No repositório criado:**
 - [ ] `README.md` com ficha técnica (tipo, versão, mantenedor, status)
+  - **CONFIRMAR:** após escrita, reler o arquivo e verificar que os campos
+    `**Versão:**`, `**Tipo:**` e `**Mantenedor:**` estão presentes e corretos
 - [ ] `INDICE.md` com tabela de todos os arquivos criados — **para tipo A:** índice
   cronológico por `data_reuniao` com estrutura de pastas `reunioes/AAAA/MM/`
   (ver Seção 4-C da nomenclatura.md e checklist OP-AG)
@@ -136,12 +138,16 @@ operação específica exigir.
   todos os repositórios, sem exceção — ver Seção 10 da nomenclatura.md)
 - [ ] `backlog-versoes.md` com entrada v1.0 e exposição de motivos
 - [ ] `SKILL.md` (apenas tipo S)
+  - **CONFIRMAR:** após escrita, reler e verificar que a linha `**Versão:**`
+    existe no cabeçalho com o valor correto (v1.0 para nova skill)
 - [ ] `stakeholders.md` (apenas tipo P)
 - [ ] Pasta `reunioes/` com `.gitkeep` (apenas tipo P)
 - [ ] Pasta `documentos/` com `.gitkeep` (apenas tipo P)
 
 **No hub-fonte (M01):**
 - [ ] `sumario.md` — nova entrada na seção correta com ID, nome, versão, status, descrição
+  - **CONFIRMAR:** após escrita, reler a seção correta do sumario.md e localizar
+    a nova entrada — verificar ID, nome e versão; confirmar que não há duplicata
 - [ ] `CONTEXTO.md` — tabela de repositórios ativos atualizada
 - [ ] `backlog-versoes.md` — nova entrada (tipo: Adição)
 
@@ -154,12 +160,22 @@ operação específica exigir.
 
 **No repositório da skill:**
 - [ ] `SKILL.md` — versão incrementada no cabeçalho
+  - **CONFIRMAR:** após escrita, reler o cabeçalho do SKILL.md e verificar que
+    a linha `**Versão:**` contém exatamente a nova versão esperada. Esta
+    confirmação é obrigatória — o Erro #013 (SEV2) foi causado pela ausência
+    exata desta verificação pós-escrita.
 - [ ] `INDICE.md` — atualizado se a operação criou ou removeu arquivo
+  - **CONFIRMAR:** após escrita, reler INDICE.md e verificar que a referência
+    à versão do SKILL.md foi atualizada
 - [ ] `backlog-versoes.md` — nova entrada com impacto (breaking/non-breaking)
   e skills afetadas
+  - **CONFIRMAR:** após escrita, reler as primeiras linhas do backlog e
+    verificar que a nova entrada está no topo com a versão correta
 
 **No hub-fonte (M01):**
 - [ ] `sumario.md` — versão da skill atualizada
+  - **CONFIRMAR:** após escrita, reler a linha da skill no sumario.md e
+    verificar que a versão bate com o cabeçalho do SKILL.md
 - [ ] `CONTEXTO.md` — tabela de repositórios atualizada
 - [ ] `backlog-versoes.md` — nova entrada (tipo: Atualização)
 
@@ -174,6 +190,8 @@ operação específica exigir.
 
 **No repositório da matriz:**
 - [ ] Arquivo alterado com versão incrementada no cabeçalho
+  - **CONFIRMAR:** após escrita, reler o arquivo alterado e verificar que
+    a linha `**Versão:**` contém a nova versão e a data correta
 - [ ] `INDICE.md` — atualizado se a operação criou ou removeu arquivo na matriz
 - [ ] `backlog-versoes.md` — nova entrada com tópico afetado, fonte, proposto por
 - [ ] `CONTEXTO.md` — versão do repositório alterado atualizada na tabela de
@@ -181,6 +199,8 @@ operação específica exigir.
 
 **No hub-fonte (M01) — se a matriz alterada NÃO for o próprio M01:**
 - [ ] `sumario.md` — versão da matriz atualizada
+  - **CONFIRMAR:** após escrita, reler a linha da matriz no sumario.md e
+    verificar que a versão bate com o cabeçalho do arquivo alterado
 - [ ] `backlog-versoes.md` — nova entrada
 
 **No dtd-setis:**
@@ -204,6 +224,9 @@ operação específica exigir.
 
 **No arquivo corrigido:**
 - [ ] Correção aplicada
+  - **CONFIRMAR:** após escrita, reler o trecho corrigido e verificar que
+    (a) o texto errado não existe mais e (b) o texto correto está presente
+    exatamente como planejado
 - [ ] Versão incrementada (MINOR) se o erro comprometia legibilidade,
   rastreabilidade ou consistência do ecossistema; não incrementar para
   typos isolados que não afetam o funcionamento
@@ -247,9 +270,13 @@ operação específica exigir.
 - [ ] `backlog-versoes.md` — nova entrada registrando a decisão/alteração
 - [ ] `stakeholders.md` — atualizado se houve mudança de participantes
 - [ ] `README.md` — versão atualizada no cabeçalho; estrutura de arquivos e link de navegação rápida atualizados se novo documento foi adicionado
+  - **CONFIRMAR:** após escrita, reler o cabeçalho do README.md e verificar
+    que a linha `**Versão:**` foi incrementada corretamente
 
 **No hub-fonte (M01):**
 - [ ] `sumario.md` — status do projeto atualizado se mudou
+  - **CONFIRMAR:** após escrita, reler a linha do projeto no sumario.md e
+    verificar que o campo de status está correto
 - [ ] `backlog-versoes.md` — nova entrada apenas se o status mudou
 
 **No dtd-setis:**
@@ -688,6 +715,8 @@ Token pode ser revogado: https://github.com/settings/tokens
 - [ ] `execucoes/AAAA-MM-DD-[contexto].md` — criado com conteúdo obrigatório:
   data/hora, executor, projeto associado (com link), resumo de etapas,
   decisões tomadas, desvios, artefatos gerados (com links), status, lições
+  - **CONFIRMAR:** após criação, verificar via GET que o arquivo existe no
+    caminho correto (pasta `execucoes/`, nome com a data real da sessão)
 
 **No projeto associado (tipo P), se houver:**
 - [ ] `EXECUCOES.md` — linha adicionada referenciando o log no repositório W
@@ -710,6 +739,8 @@ Token pode ser revogado: https://github.com/settings/tokens
 **No repositório da agenda:**
 - [ ] Arquivo `AAAA-MM-DD-[CLASSIFICACAO]-[descricao].md` criado na pasta
   `reunioes/AAAA/MM/` correta (baseada em `data_reuniao`, não `data_registro`)
+  - **CONFIRMAR:** após criação, verificar via GET que o arquivo está no caminho
+    `reunioes/[ano]/[mês]/[nome].md` baseado em `data_reuniao`
 - [ ] Front Matter YAML com `data_reuniao` e `data_registro` preenchidos
 - [ ] `INDICE.md` — nova linha adicionada na posição cronológica correta
   (ordenado por `data_reuniao`, não por data de inserção)
@@ -751,6 +782,22 @@ foram classificados retroativamente na versão v2.5 de 2026-06-05.
 ---
 
 ## REGISTRO DE ERROS APRENDIDOS
+
+**Padrão obrigatório de cada entrada** — campos na seguinte ordem:
+
+```
+### Erro #NNN — AAAA-MM-DD
+**Problema:** [descrição clara do que ocorreu]
+**Causa:** [causa raiz identificada]
+**Severidade:** [SEV1 | SEV2 | SEV3 | SEV4]
+**Correção incorporada:** [o que foi alterado na S04 para evitar recorrência]
+**Status:** [Corrigido na vX.Y | Em análise]
+```
+
+Entradas mais recentes ficam no topo. Nenhum campo pode ser omitido.
+Todo erro deve ter bloco nesta seção E entrada no backlog-versoes.md.
+
+---
 
 ### Erro #013 — 2026-06-05
 **Problema:** O cabeçalho do SKILL.md ficou travado em v2.1 enquanto o backlog
@@ -957,6 +1004,12 @@ comparadas explicitamente após cada operação.
 - **Nunca armazene o token** além do necessário para a sessão atual.
 - **Nunca assuma SHA.** Sempre leia da API antes de atualizar.
 - **Sempre verifique o README do dtd-setis** após qualquer OP-A.
+- **Se um erro novo for encontrado:** registrar obrigatoriamente em DOIS lugares:
+  (1) criar bloco `### Erro #NNN` na seção "REGISTRO DE ERROS APRENDIDOS"
+  deste SKILL.md com todos os campos obrigatórios preenchidos; e
+  (2) adicionar entrada no `backlog-versoes.md` deste repositório.
+  Nunca registrar apenas em um dos dois — o Erro #013 (SEV2) ficou ausente
+  da seção de erros por uma sessão inteira por causa exatamente deste gap.
 - **Sempre encerre com o relatório da Etapa 7**, mesmo que o usuário
   não solicite.
 - **Se encontrar inconsistência não planejada durante a execução:**
