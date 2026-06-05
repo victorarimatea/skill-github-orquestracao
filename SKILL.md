@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v2.6 — 2026-06-05
+**Versão:** v2.7 — 2026-06-05
 **Repositório:** https://github.com/victorarimatea/skl-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -671,6 +671,69 @@ Em todos os demais tipos de operação, é obrigatória.
 `hub-entrada/staging.md` — Seção C (Ideias mineradas).
 A Seção C contém instruções detalhadas sobre o ciclo de vida das ideias,
 política de limpeza e legenda de status.
+
+---
+
+### Segundo tipo de candidato — Conhecimento consolidado (hub-aprendizagem)
+
+#### Intenção do Comandante
+
+O hub-aprendizagem é a memória intelectual do ecossistema — não documentação
+operacional, mas narrativa de aprendizado sedimentado. Um conhecimento
+consolidado é diferente de uma ideia embrionária: ele já passou pelo crivo
+da prática, foi confrontado com benchmarks, e resultou em uma lição que
+muda como o ecossistema opera. O estado final desejado desta etapa é que
+nenhum aprendizado estrutural se perca nos textos de conversas — cada
+sessão que produz diagnóstico, decisão arquitetural ou mudança estrutural
+deve deixar rastro intelectual no hub-aprendizagem.
+
+#### Critérios de elegibilidade — o aprendizado é consolidado se:
+
+| # | Critério | Pergunta de teste |
+|---|---|---|
+| 1 | Resolveu um problema recorrente sem solução definitiva até então | *"este problema voltará se não registrarmos o aprendizado?"* |
+| 2 | Revelou uma causa raiz que não era óbvia antes | *"antes desta sessão, a causa raiz era conhecida?"* |
+| 3 | Produziu decisão arquitetural com raciocínio documentável | *"há contexto, alternativas e consequências que merecem registro?"* |
+| 4 | Chegou intuitivamente a algo que benchmarks de mercado validam | *"o que fizemos tem nome, padrão ou literatura de referência?"* |
+| 5 | Gerou lição que muda como o ecossistema opera daqui para frente | *"operaremos diferente por causa do que aprendemos hoje?"* |
+
+Elegível com **pelo menos dois** critérios ativados.
+
+#### Procedimento
+
+**Passo 1 — Segunda varredura (após mineração de ideias da Seção C)**
+Reler o histórico com foco diferente: não "o que poderia existir" mas
+"o que aprendemos". Sinais: "descobrimos que...", "a causa raiz era...",
+"o que o mercado chama de...", "se tivéssemos sabido antes...".
+
+**Passo 2 — Apresentação ao mantenedor**
+
+```
+📚 Aprendizado consolidado identificado:
+"[síntese do aprendizado em 1-2 frases]"
+
+Critérios ativados: [números]
+Benchmarks relacionados: [se identificados]
+Contexto: [em que momento da sessão surgiu]
+
+Gostaria de registrar e redigir este aprendizado para o hub-aprendizagem?
+```
+
+**Passo 3 — Redação imediata após aprovação**
+Redigir o aprendizado completo **na mesma sessão**, com contexto fresco.
+Formato: narrativa com contexto, diagnóstico, benchmark relacionado e
+lição permanente. Não deixar para depois — o contexto da sessão é o
+recurso mais valioso e se perde com o tempo.
+
+**Passo 4 — Depósito na Seção E da staging.md**
+Status inicial: `pendente`. A inserção formal no hub-aprendizagem
+ocorre em sessão dedicada ou quando o mantenedor decidir.
+
+#### Quando esta sub-etapa pode ser omitida
+
+Apenas em **OP-E** (correção pontual) onde o histórico não contém
+conteúdo substantivo. Em sessões com diagnóstico, decisão arquitetural
+ou mudança estrutural, é obrigatória.
 
 ---
 
