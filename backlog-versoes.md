@@ -1,3 +1,42 @@
+## v2.6 — 2026-06-05
+
+**Tipo de alteração:** Atualização estrutural
+**Autorizado por:** Victor Leonardo Arimatea Queiroz — Diretor de Transformação Digital
+**Impacto:** non-breaking
+**Skills afetadas:** nenhuma
+
+**Exposição de motivos:** Execução 2 da sessão de 2026-06-05. Resultado do
+exercício de engenharia reversa que identificou 4 gaps estruturais no ecossistema.
+O gap principal (GAP 1 — ausência de verificação independente) foi atacado com
+a inserção de verificações embutidas obrigatórias nas checklists de todas as
+operações OP-X. Nível B Estrutural: além das verificações, reescrita das regras
+de registro de erros e padronização dos campos obrigatórios de cada entrada.
+
+### Transformações aplicadas
+
+**Transformação 1 — Verificações embutidas (CONFIRMAR) nas checklists:**
+- OP-A: README.md, SKILL.md (tipo S), sumario.md (3 pontos)
+- OP-B: SKILL.md cabeçalho, INDICE.md, backlog, sumario.md (4 pontos)
+- OP-C: arquivo alterado cabeçalho, sumario.md (2 pontos)
+- OP-E: correção aplicada (1 ponto)
+- OP-P: README.md, sumario.md status (2 pontos)
+- OP-W: log de execução (1 ponto)
+- OP-AG: arquivo de reunião caminho (1 ponto)
+Total: 14 blocos CONFIRMAR inseridos
+
+**Transformação 2 — Regra de dois registros obrigatórios para erros novos:**
+Todo erro novo deve criar bloco na seção REGISTRO DE ERROS e entrada no
+backlog-versoes.md. Nunca apenas um dos dois.
+
+**Transformação 3 — Padrão obrigatório de campos de entrada de erro:**
+Campos em ordem fixa: Problema, Causa, Severidade, Correção incorporada, Status.
+Instrução adicionada no cabeçalho da seção de erros.
+
+### Alterações realizadas
+- `SKILL.md` v2.5 → v2.6: 3 transformações conforme acima
+
+---
+
 ## v2.5 — 2026-06-05
 
 **Tipo de alteração:** Atualização
