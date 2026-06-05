@@ -752,6 +752,21 @@ foram classificados retroativamente na versão v2.5 de 2026-06-05.
 
 ## REGISTRO DE ERROS APRENDIDOS
 
+### Erro #013 — 2026-06-05
+**Problema:** O cabeçalho do SKILL.md ficou travado em v2.1 enquanto o backlog
+já registrava v2.4. As operações das versões v2.2, v2.3 e v2.4 atualizaram o
+corpo do SKILL.md mas não propagaram o incremento para a linha `**Versão:**`
+do cabeçalho. O drift foi detectado na abertura de sessão de 2026-06-05 pela
+comparação entre SKILL.md (v2.1), CONTEXTO.md (v2.3) e backlog (v2.4).
+**Causa:** A checklist OP-B instrui "versão incrementada no cabeçalho" mas não
+tem sub-etapa de confirmação pós-escrita. Instrução sem verificação embutida
+é vulnerabilidade estrutural — identificada como Ponto de Falha 1.1 na análise
+de engenharia reversa de 2026-06-05.
+**Severidade:** SEV2
+**Correção incorporada:** Identificado como motivação principal para a Execução 2
+(verificações embutidas obrigatórias na S04) da sessão de 2026-06-05.
+**Status:** Corrigido na v2.4.1 (cabeçalho) e v2.5 (registro formal)
+
 ### Erro #012 — 2026-06-05
 **Severidade:** SEV3
 **Problema:** O ONBOARDING.md não estava coberto pelas verificações pós-execução
