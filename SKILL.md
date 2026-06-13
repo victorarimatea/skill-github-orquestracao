@@ -74,11 +74,28 @@ usuário não solicite explicitamente.
 
 ## ETAPA 0 — Leitura do estado real (obrigatória, sem exceções)
 
-Antes de qualquer outra ação, leia os arquivos abaixo via web_fetch.
+Antes de qualquer outra ação, leia os três arquivos abaixo.
 Nunca pule esta etapa. O objetivo é conhecer o estado **real e atual**
 do ecossistema, não o que foi discutido na sessão.
 
+**Regra de acesso — depende do tipo de sessão:**
+
+- **Sessão com token (operacional / escrita):** use obrigatoriamente a
+  API GitHub (`api.github.com/repos/…/contents/…` com Bearer token).
+  Nunca use `raw.githubusercontent.com` em sessões com token — risco de
+  SHA obsoleto por cache CDN, o que causa falhas ou corrupção silenciosa
+  em operações PUT.
+
+- **Sessão sem token (leitura pura, auditoria W05, briefings):** use
+  `raw.githubusercontent.com` — sem risco de cache em sessões sem escrita.
+
 ```
+# Sessão COM token (API — anti-cache):
+GET https://api.github.com/repos/victorarimatea/hub-fonte/contents/sumario.md
+GET https://api.github.com/repos/victorarimatea/hub-fonte/contents/nomenclatura.md
+GET https://api.github.com/repos/victorarimatea/hub-fonte/contents/CONTEXTO.md
+
+# Sessão SEM token (raw — apenas leitura):
 GET https://raw.githubusercontent.com/victorarimatea/hub-fonte/main/sumario.md
 GET https://raw.githubusercontent.com/victorarimatea/hub-fonte/main/nomenclatura.md
 GET https://raw.githubusercontent.com/victorarimatea/hub-fonte/main/CONTEXTO.md
