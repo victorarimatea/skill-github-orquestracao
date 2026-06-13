@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v2.7 — 2026-06-05
+**Versão:** v2.8 — 2026-06-13
 **Repositório:** https://github.com/victorarimatea/skl-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -78,27 +78,30 @@ Antes de qualquer outra ação, leia os três arquivos abaixo.
 Nunca pule esta etapa. O objetivo é conhecer o estado **real e atual**
 do ecossistema, não o que foi discutido na sessão.
 
-**Regra de acesso — depende do tipo de sessão:**
+**Regra de acesso — doutrina de dois tokens (v2.8):**
 
-- **Sessão com token (operacional / escrita):** use obrigatoriamente a
-  API GitHub (`api.github.com/repos/…/contents/…` com Bearer token).
-  Nunca use `raw.githubusercontent.com` em sessões com token — risco de
-  SHA obsoleto por cache CDN, o que causa falhas ou corrupção silenciosa
-  em operações PUT.
+O ecossistema é lido e escrito exclusivamente via GitHub Contents API,
+autenticada. O acesso é graduado por dois tokens, segundo menor privilégio:
 
-- **Sessão sem token (leitura pura, auditoria W05, briefings):** use
-  `raw.githubusercontent.com` — sem risco de cache em sessões sem escrita.
+- **Token de leitura ampla:** carregado na abertura de toda sessão (qualquer
+  modo). Alcança repositórios privados (ex.: o handoff no hub-memoria), eleva
+  o teto para 5000 req/h e elimina o risco de SHA obsoleto por cache CDN.
+
+- **Token de edição:** carregado apenas quando a sessão converte para escrita
+  (Modo 1 de operação). Habilita PUT; revogado ao fim da sessão.
+
+O `raw.githubusercontent.com` está aposentado como canal de sessão — não lê
+repositório privado e introduz cache CDN. Permanece apenas como recurso
+público externo de leitura tokenless de repositórios públicos, fora do rito
+de sessão. Ver `hub-entrada/PROTOCOLO-SESSAO.md` para os ritos completos.
 
 ```
-# Sessão COM token (API — anti-cache):
+# Leitura (abertura de qualquer sessão) — token de leitura, via API:
 GET https://api.github.com/repos/victorarimatea/hub-fonte/contents/sumario.md
 GET https://api.github.com/repos/victorarimatea/hub-fonte/contents/nomenclatura.md
 GET https://api.github.com/repos/victorarimatea/hub-fonte/contents/CONTEXTO.md
 
-# Sessão SEM token (raw — apenas leitura):
-GET https://raw.githubusercontent.com/victorarimatea/hub-fonte/main/sumario.md
-GET https://raw.githubusercontent.com/victorarimatea/hub-fonte/main/nomenclatura.md
-GET https://raw.githubusercontent.com/victorarimatea/hub-fonte/main/CONTEXTO.md
+# Escrita (Modo 1 — operação) — token de edição, mesma API (PUT).
 ```
 
 A partir da leitura, extraia e registre internamente:
