@@ -1,3 +1,27 @@
+## v2.8 — 2026-06-13
+
+**Tipo de alteração:** Atualização
+**Autorizado por:** Victor Leonardo Arimatea Queiroz — Diretor de Transformação Digital
+**Impacto:** non-breaking
+**Skills afetadas:** nenhuma
+
+**Exposição de motivos:** A ETAPA 0 distinguia acesso por presença de token
+("com token → API; sem token → raw"). A prática mostrou que a abertura de
+sessão precisa ler o handoff no hub-memoria (P02, privado) — que raw e API
+não autenticada não alcançam —, tornando a leitura "sem token"
+estruturalmente inviável. Adota-se a doutrina de dois tokens: token de
+leitura ampla (autenticada, alcança privados, 5000 req/h, sem cache CDN) na
+abertura de toda sessão; token de edição apenas na conversão para escrita.
+O raw é aposentado como canal de sessão. Resolve também o item I1 do ROADMAP
+(raw → API) e o risco de cache CDN simultaneamente. Doutrina detalhada em
+hub-entrada/PROTOCOLO-SESSAO.md v1.0.
+
+### Alterações realizadas
+- `SKILL.md` v2.7 → v2.8: ETAPA 0 — regra de acesso reescrita para o modelo
+  de dois tokens; bloco de exemplos atualizado (raw removido)
+
+---
+
 ## v2.7 — 2026-06-05
 
 **Tipo de alteração:** Atualização
