@@ -2,7 +2,7 @@
 
 **Tipo:** S — Skill
 **ID:** S04
-**Versão:** v2.7 — 2026-06-05
+**Versão:** v2.9 — 2026-06-14
 **Visibilidade:** Público
 **Mantenedor:** victorarimatea
 
