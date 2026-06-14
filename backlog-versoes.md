@@ -1,3 +1,25 @@
+## v2.9 — 2026-06-14
+
+**Tipo de alteração:** Melhoria (OP-B) — incorporação de erro aprendido
+**Autorizado por:** Victor Leonardo Arimatea Queiroz
+**Impacto:** non-breaking
+**Skills afetadas:** nenhuma além da própria S04
+
+**Exposição de motivos:** A reauditoria W05 independente de 2026-06-14 detectou
+2 SEV2 de README não incrementado (W05 e W06 em v1.2 enquanto WORKFLOW.md/sumario
+em v1.3), introduzidos na OP-W da mesma sessão. Mesma classe do Erro #008 (OP-P):
+o README — que declara a versão do repositório como unidade — não era nó do grafo
+de propagação de versões nem constava da checklist OP-W.
+
+### Alterações realizadas
+- `SKILL.md` v2.8 -> v2.9:
+  - Erro #014 registrado (SEV2)
+  - Checklist OP-W: item `README.md` (versão alinhada ao sumario) + CONFIRMAR
+  - REGRAS DE COMPORTAMENTO: regra universal de sincronização do README de todo
+    repositório alterado (README como nó do grafo de versões)
+
+---
+
 ## v2.8 — 2026-06-13
 
 **Tipo de alteração:** Atualização
