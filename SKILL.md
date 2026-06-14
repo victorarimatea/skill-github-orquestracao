@@ -1,6 +1,6 @@
 # skill-github-orquestracao
 
-**Versão:** v2.8 — 2026-06-13
+**Versão:** v2.9 — 2026-06-14
 **Repositório:** https://github.com/victorarimatea/skl-github-orquestracao
 **Mantenedor:** victorarimatea
 
@@ -793,6 +793,9 @@ Token pode ser revogado: https://github.com/settings/tokens
 - [ ] `INDICE.md` — atualizado se novo arquivo ou pasta foi criado
 - [ ] `backlog-versoes.md` — nova entrada com status do workflow, execuções afetadas,
   skills afetadas
+- [ ] `README.md` — versão do repositório (como unidade) alinhada ao `sumario.md`
+  - **CONFIRMAR:** após escrita, reler o cabeçalho do README.md e verificar que
+    a linha `**Versão:**` foi incrementada para a versão registrada no sumario.md
 
 **Log de execução (quando em sessão autenticada com token):**
 - [ ] `execucoes/AAAA-MM-DD-[contexto].md` — criado com conteúdo obrigatório:
@@ -881,6 +884,23 @@ Entradas mais recentes ficam no topo. Nenhum campo pode ser omitido.
 Todo erro deve ter bloco nesta seção E entrada no backlog-versoes.md.
 
 ---
+
+### Erro #014 — 2026-06-14
+**Problema:** Ao incrementar W05 e W06 para v1.3 (OP-W), os `README.md` desses
+repositórios não foram atualizados, ficando em v1.2 enquanto WORKFLOW.md e
+sumario.md já registravam v1.3 — 2 SEV2 detectados por reauditoria W05
+independente de 2026-06-14. Mesma classe do Erro #008 (que cobriu OP-P), agora
+em OP-W.
+**Causa:** A checklist OP-W não incluía o `README.md` do repositório de workflow,
+e não havia regra universal garantindo que o README de cada repositório alterado
+declarasse a versão do repo como unidade, alinhada ao sumario.md. O README não
+era nó do grafo de propagação de versões.
+**Severidade:** SEV2
+**Correção incorporada:** (1) item `README.md` adicionado à checklist OP-W com
+CONFIRMAR; (2) regra universal em REGRAS DE COMPORTAMENTO: sincronizar o README
+de todo repositório alterado com a versão declarada no sumario.md — README é nó
+do grafo de versões.
+**Status:** Corrigido na v2.9
 
 ### Erro #013 — 2026-06-05
 **Problema:** O cabeçalho do SKILL.md ficou travado em v2.1 enquanto o backlog
@@ -1087,6 +1107,9 @@ comparadas explicitamente após cada operação.
 - **Nunca armazene o token** além do necessário para a sessão atual.
 - **Nunca assuma SHA.** Sempre leia da API antes de atualizar.
 - **Sempre verifique o README do dtd-setis** após qualquer OP-A.
+- **Sempre sincronize o README.md de cada repositório alterado** com a versão
+  do repo declarada no sumario.md — o README é nó do grafo de propagação de
+  versões, não documento à parte (Erro #014).
 - **Se um erro novo for encontrado:** registrar obrigatoriamente em DOIS lugares:
   (1) criar bloco `### Erro #NNN` na seção "REGISTRO DE ERROS APRENDIDOS"
   deste SKILL.md com todos os campos obrigatórios preenchidos; e
